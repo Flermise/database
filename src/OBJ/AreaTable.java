@@ -1,6 +1,6 @@
 package OBJ;
 
-public class Area {
+public class AreaTable {
 	private int areaID;
 	private String areaName;
 	public int getAreaID() {

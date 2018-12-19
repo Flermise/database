@@ -2,12 +2,12 @@ package DAO;
 
 import java.util.List;
 
-import OBJ.Area;
+import OBJ.AreaTable;
 
 public interface AreaTableDAO {
-	public void createArea(Area area) throws DAOException;
-	public void updateArea(Area area) throws DAOException;
+	public void createArea(AreaTable area) throws DAOException;
+	public void updateArea(AreaTable area) throws DAOException;
 	public void deleteArea(int areaId) throws DAOException;
-	public Area getArea(int areaId) throws DAOException;
-	public List<Area> searchAreas() throws DAOException;
+	public AreaTable getArea(int areaId) throws DAOException;
+	public List<AreaTable> searchAreas() throws DAOException;
 }	
