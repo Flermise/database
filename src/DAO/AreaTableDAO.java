@@ -4,7 +4,7 @@ import java.util.List;
 
 import OBJ.Area;
 
-public interface AreaTable {
+public interface AreaTableDAO {
 	public void createArea(Area area) throws DAOException;
 	public void updateArea(Area area) throws DAOException;
 	public void deleteArea(int areaId) throws DAOException;
