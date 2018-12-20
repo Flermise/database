@@ -18,8 +18,13 @@ public class DAOBase implements DAO {
 		}
 	}
 	
-	public Connection getConnection() throws SQLException {
-		return ds.getConnection();
+	public Connection getConnection() throws DAOException {
+		try {
+			return ds.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public void release(Connection conn,PreparedStatement ps,ResultSet rs) {
