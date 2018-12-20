@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="D:/Code/Course_Code/DataBase/database/lib/c3p0-0.9.5.1.jar"/>
 	<classpathentry kind="lib" path="D:/Code/Course_Code/DataBase/database/lib/mchange-commons-java-0.2.10.jar"/>
 	<classpathentry kind="lib" path="D:/Code/Course_Code/DataBase/database/lib/sqljdbc4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

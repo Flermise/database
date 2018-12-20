@@ -1,4 +1,4 @@
-package OBJ;
+package entity;
 
 public class Area {
 	private int areaID;
