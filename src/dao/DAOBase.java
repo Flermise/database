@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,7 +18,7 @@ public class DAOBase implements DAO {
 		}
 	}
 	
-	public Connection getConnection() throws DAOException {
+	public  Connection getConnection() throws SQLException {
 		try {
 			return ds.getConnection();
 		} catch (SQLException e) {
@@ -27,7 +27,7 @@ public class DAOBase implements DAO {
 		return null;
 	}
 
-	public void release(Connection conn,PreparedStatement ps,ResultSet rs) {
+	public  void release(Connection conn,PreparedStatement ps,ResultSet rs) {
 		if(rs!=null) {
 			try {
 				rs.close();
