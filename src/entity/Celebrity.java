@@ -127,4 +127,14 @@ public class Celebrity {
 	public void setIntro(String intro) {
 		this.intro = intro;
 	}
+
+	@Override
+	public String toString() {
+		return "Celebrity [celebId=" + celebId + ", chName=" + chName + ", enName=" + enName + ", otherChName="
+				+ otherChName + ", otherEnName=" + otherEnName + ", avatar=" + avatar + ", sex=" + sex
+				+ ", constellation=" + constellation + ", birthplace=" + birthplace + ", birthday=" + birthday
+				+ ", deathday=" + deathday + ", familyMember=" + familyMember + ", IMDb=" + IMDb + ", intro=" + intro
+				+ "]";
+	}
+
 }

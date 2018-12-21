@@ -1,9 +1,9 @@
 package entity;
 
 public class AwardInfo {
-	private int awdInfoId;			//详细奖项Id
-	private int awdId;				//奖项Id
-	private String awdInfoName;		//详细奖项名
+	private int awdInfoId; // 详细奖项Id
+	private int awdId; // 奖项Id
+	private String awdInfoName; // 详细奖项名
 
 	public int getAwdInfoId() {
 		return awdInfoId;
@@ -28,6 +28,10 @@ public class AwardInfo {
 	public void setAwdInfoName(String awdInfoName) {
 		this.awdInfoName = awdInfoName;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "AwardInfo [awdInfoId=" + awdInfoId + ", awdId=" + awdId + ", awdInfoName=" + awdInfoName + "]";
+	}
+
 }

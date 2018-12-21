@@ -28,5 +28,10 @@ public class MovieAwardInfo {
 	public void setState(String state) {
 		this.state = state;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "MovieAwardInfo [awdInfoId=" + awdInfoId + ", mId=" + mId + ", state=" + state + "]";
+	}
+
 }

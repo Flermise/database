@@ -36,7 +36,6 @@ public class Comment {
 		this.state = state;
 	}
 
-	
 	public float getScore() {
 		return score;
 	}
@@ -76,5 +75,11 @@ public class Comment {
 	public void setIsVisible(String isVisible) {
 		this.isVisible = isVisible;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Comment [uId=" + uId + ", mId=" + mId + ", state=" + state + ", score=" + score + ", cmtTime=" + cmtTime
+				+ ", cmtContent=" + cmtContent + ", likeNum=" + likeNum + ", isVisible=" + isVisible + "]";
+	}
+
 }

@@ -28,5 +28,10 @@ public class CelebAwardInfo {
 	public void setState(String state) {
 		this.state = state;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "CelebAwardInfo [awdInfoId=" + awdInfoId + ", celebId=" + celebId + ", state=" + state + "]";
+	}
+
 }

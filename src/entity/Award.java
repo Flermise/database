@@ -3,13 +3,13 @@ package entity;
 import java.sql.Date;
 
 public class Award {
-	
-	private int awdId;			//奖项id
-	private String chName;		//奖项中文名
-	private String enName;		//奖项英文名
-	private Date awdDate;		//颁奖时间
-	private String awdCountry;	//颁奖城市
-	private String website;		//官方网站
+
+	private int awdId; // 奖项id
+	private String chName; // 奖项中文名
+	private String enName; // 奖项英文名
+	private Date awdDate; // 颁奖时间
+	private String awdCountry; // 颁奖城市
+	private String website; // 官方网站
 
 	public int getAwdId() {
 		return awdId;
@@ -58,5 +58,11 @@ public class Award {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Award [awdId=" + awdId + ", chName=" + chName + ", enName=" + enName + ", awdDate=" + awdDate
+				+ ", awdCountry=" + awdCountry + ", website=" + website + "]";
+	}
+
 }
