@@ -20,7 +20,7 @@ public class AreaDAOSImpl extends DAOBase implements AreaDAO{
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(INSERT_AREA_SQL);
-			ps.setInt(1, area.getAreaID());
+			ps.setInt(1, area.getAreaId());
 			ps.setString(2, area.getAreaName());
 			ps.executeUpdate();
 			
@@ -38,7 +38,7 @@ public class AreaDAOSImpl extends DAOBase implements AreaDAO{
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(UPDATE_AREA_SQL);
-			ps.setInt(1, area.getAreaID());
+			ps.setInt(1, area.getAreaId());
 			ps.setString(2, area.getAreaName());
 			ps.executeUpdate();
 			

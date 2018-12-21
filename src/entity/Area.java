@@ -1,13 +1,13 @@
 package entity;
 
 public class Area {
-	private int areaID;
+	private int areaId;
 	private String areaName;
-	public int getAreaID() {
-		return areaID;
+	public int getAreaId() {
+		return areaId;
 	}
-	public void setAreaID(int areaID) {
-		this.areaID = areaID;
+	public void setAreaID(int areaId) {
+		this.areaId = areaId;
 	}
 	public String getAreaName() {
 		return areaName;
