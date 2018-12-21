@@ -17,7 +17,7 @@ public class AreaDAOImpl extends DAOBase implements AreaDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_AREA_SQL=
-			"INSERT INTO area (areaId,areaName) VALUES(?, ?)";
+			"INSERT INTO area VALUES(?, ?)";
 	public void insertArea(Area area) {
 		try {
 			conn = getConnection();
@@ -40,8 +40,8 @@ public class AreaDAOImpl extends DAOBase implements AreaDAO{
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(UPDATE_AREA_SQL);
-			ps.setInt(1, area.getAreaId());
-			ps.setString(2, area.getAreaName());
+			ps.setString(1, area.getAreaName());
+			ps.setInt(2, area.getAreaId());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {
@@ -77,7 +77,7 @@ public class AreaDAOImpl extends DAOBase implements AreaDAO{
 			ps.setInt(1, areaId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				area.setAreaID(areaId);
+				area.setAreaId(areaId);
 				area.setAreaName(rs.getString("areaName"));
 			}
 		}catch(SQLException e) {
@@ -98,7 +98,7 @@ public class AreaDAOImpl extends DAOBase implements AreaDAO{
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				Area area = new Area();
-				area.setAreaID(rs.getInt("areaId"));
+				area.setAreaId(rs.getInt("areaId"));
 				area.setAreaName(rs.getString("areaName"));
 				areas.add(area);
 			}

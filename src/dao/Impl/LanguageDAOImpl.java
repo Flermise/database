@@ -17,7 +17,7 @@ public class LanguageDAOImpl extends DAOBase implements LanguageDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_LANGUAGE_SQL=
-			"INSERT INTO language (languageId,languageName) VALUES(?, ?)";
+			"INSERT INTO language VALUES(?, ?)";
 	public void insertLanguage(Language language) {
 		try {
 			conn = getConnection();
@@ -40,8 +40,8 @@ public class LanguageDAOImpl extends DAOBase implements LanguageDAO{
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(UPDATE_LANGUAGE_SQL);
-			ps.setInt(1, language.getLanguageId());
-			ps.setString(2, language.getLanguageName());
+			ps.setString(1, language.getLanguageName());
+			ps.setInt(2, language.getLanguageId());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {
@@ -59,7 +59,6 @@ public class LanguageDAOImpl extends DAOBase implements LanguageDAO{
 			ps = conn.prepareStatement(DELETE_LANGUAGE_SQL);
 			ps.setInt(1, languageId);
 			ps.executeUpdate();
-			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {

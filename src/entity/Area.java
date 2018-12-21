@@ -6,7 +6,7 @@ public class Area {
 	public int getAreaId() {
 		return areaId;
 	}
-	public void setAreaID(int areaId) {
+	public void setAreaId(int areaId) {
 		this.areaId = areaId;
 	}
 	public String getAreaName() {
