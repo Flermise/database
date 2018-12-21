@@ -92,7 +92,7 @@ public class CelebAwardInfoDAOImpl extends DAOBase implements CelebAwardInfoDAO 
 	}
 	
 	private static final String DELETE_CELEBAWARDINFO_BY_CELEBID_SQL =
-			"delete from celebAwardInfo where awdInfo;";
+			"delete from celebAwardInfo where celebId = ?;";
 	@Override
 	public void deleteCelebAwardInfoByCelebId(int celebId) {
 		try {
