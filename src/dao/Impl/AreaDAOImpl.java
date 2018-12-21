@@ -1,4 +1,4 @@
-package dao;
+package dao.Impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.AreaDAO;
+import dao.DAOBase;
 import entity.Area;
 
-public class AreaDAOSImpl extends DAOBase implements AreaDAO{
+public class AreaDAOImpl extends DAOBase implements AreaDAO{
 	private  Connection conn = null;
 	private  PreparedStatement ps = null;
 	private  ResultSet rs = null;

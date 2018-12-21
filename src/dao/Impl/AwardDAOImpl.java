@@ -1,4 +1,4 @@
-package dao;
+package dao.Impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.AwardDAO;
+import dao.DAOBase;
 import entity.Award;
 
-public class AwardDAOSImpl extends DAOBase implements AwardDAO{
+public class AwardDAOImpl extends DAOBase implements AwardDAO{
 	private Connection conn = null;
 	private PreparedStatement ps = null;
 	private ResultSet rs = null;

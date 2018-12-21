@@ -1,4 +1,4 @@
-package dao;
+package dao.Impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.DAOBase;
+import dao.LanguageDAO;
 import entity.Language;
 
-public class LanguageDAOSImpl extends DAOBase implements LanguageDAO{
+public class LanguageDAOImpl extends DAOBase implements LanguageDAO{
 	private  Connection conn = null;
 	private  PreparedStatement ps = null;
 	private  ResultSet rs = null;
