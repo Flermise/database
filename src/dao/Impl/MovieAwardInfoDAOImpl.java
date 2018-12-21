@@ -37,7 +37,7 @@ public class MovieAwardInfoDAOImpl extends DAOBase implements MovieAwardInfoDAO 
 	}
 	
 	private static final String UPDATE_MOVIEAWARDINFO_SQL=
-			"update movieAwardInfo state = ? where awdInfoId = ? and mId = ?";
+			"update movieAwardInfo set state = ? where awdInfoId = ? and mId = ?";
 	@Override
 	public void updateMovieAwardInfo(MovieAwardInfo mai) {
 		try {

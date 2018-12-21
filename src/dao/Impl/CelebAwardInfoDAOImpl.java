@@ -38,7 +38,7 @@ public class CelebAwardInfoDAOImpl extends DAOBase implements CelebAwardInfoDAO 
 	}
 	
 	private static final String UPDATE_CELEBAWARDINFO_SQL=
-			"update celebAwardInfo state = ? where awdInfoId = ? and celebId = ?";
+			"update celebAwardInfo set state = ? where awdInfoId = ? and celebId = ?";
 	@Override
 	public void updateCelebAwardInfo(CelebAwardInfo cai) {
 		try {
