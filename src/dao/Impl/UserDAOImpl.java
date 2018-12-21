@@ -85,7 +85,7 @@ public class UserDAOImpl extends DAOBase implements UserDAO{
 				user.setuId(userId);
 				user.setUserName(rs.getString("userName"));
 				user.setPassword(rs.getString("password"));
-				user.setPhoneNumber(rs.getString("password"));
+				user.setPhoneNumber(rs.getString("phoneNumber"));
 				user.setEmail(rs.getString("email"));
 			}
 		}catch(SQLException e) {
@@ -109,7 +109,7 @@ public class UserDAOImpl extends DAOBase implements UserDAO{
 				user.setuId(rs.getInt("uId"));
 				user.setUserName(rs.getString("userName"));
 				user.setPassword(rs.getString("password"));
-				user.setPhoneNumber(rs.getString("password"));
+				user.setPhoneNumber(rs.getString("phoneNumber"));
 				user.setEmail(rs.getString("email"));
 				users.add(user);
 			}
@@ -120,5 +120,4 @@ public class UserDAOImpl extends DAOBase implements UserDAO{
 		}
 		return users;
 	}
-
 }
