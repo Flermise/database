@@ -1,9 +1,9 @@
 package entity;
 
 public class AwardInfo {
-	private int awdInfoId;
-	private int awdId;
-	private String awdInfoName;
+	private int awdInfoId;			//详细奖项Id
+	private int awdId;				//奖项Id
+	private String awdInfoName;		//详细奖项名
 
 	public int getAwdInfoId() {
 		return awdInfoId;
