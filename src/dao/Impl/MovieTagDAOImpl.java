@@ -10,7 +10,6 @@ import java.util.List;
 import dao.DAOBase;
 import dao.MovieTagDAO;
 import entity.MovieTag;
-import entity.Tag;
 
 public class MovieTagDAOImpl extends DAOBase implements MovieTagDAO{
 	private  Connection conn = null;
@@ -70,17 +69,97 @@ public class MovieTagDAOImpl extends DAOBase implements MovieTagDAO{
 		}
 	}
 
-	private static final String FIND_MOVIETAG_BY_ID_SQL=
+	private static final String DELETE_MOVIETAG_BY_MID_SQL=
+			"delete from movieTag where mId = ?;";
+	@Override
+	public void deleteMovieTagByMId(int mId) {
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(DELETE_MOVIETAG_BY_MID_SQL);
+			ps.setInt(1, mId);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}finally{
+			release(conn, ps, rs);
+		}
+	}
+	
+	private static final String DELETE_MOVIETAG_BY_TAGID_SQL=
+			"delete from movieTag where mId = ?;";
+	@Override
+	public void deleteMovieTagByTagId(int tagId) {
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(DELETE_MOVIETAG_BY_TAGID_SQL);
+			ps.setInt(1, tagId);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}finally{
+			release(conn, ps, rs);
+		}
+		
+	}
+	
+	private static final String FIND_MOVIETAG_SQL=
 			"SELECT * FROM movieTag WHERE mId = ? and tagId = ?";
-	public MovieTag findMovieTagById(int mId,int tagId) {
+	public MovieTag findMovieTag(int mId,int tagId) {
 		MovieTag movieTag = new MovieTag();
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(FIND_MOVIETAG_BY_ID_SQL);
+			ps = conn.prepareStatement(FIND_MOVIETAG_SQL);
+			ps.setInt(1, mId);
+			ps.setInt(2, tagId);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				movieTag.setmId(mId);
+				movieTag.setTagId(tagId);
+				movieTag.setWeight(rs.getInt("weight"));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			release(conn, ps, rs);
+		}
+		return movieTag;
+	}
+	
+	private static final String FIND_MOVIETAG_BY_MID_SQL=
+			"SELECT * FROM movieTag WHERE mId = ? and tagId = ?";
+	public MovieTag findMovieTagByMId(int mId) {
+		MovieTag movieTag = new MovieTag();
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(FIND_MOVIETAG_BY_MID_SQL);
 			ps.setInt(1, mId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				movieTag.setmId(mId);
+				movieTag.setTagId(rs.getInt("tagId"));
+				movieTag.setWeight(rs.getInt("weight"));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			release(conn, ps, rs);
+		}
+		return movieTag;
+	}
+	
+	private static final String FIND_MOVIETAG_BY_TAGID_SQL=
+			"SELECT * FROM movieTag WHERE mId = ? and tagId = ?";
+	public MovieTag findMovieTagByTagId(int tagId) {
+		MovieTag movieTag = new MovieTag();
+		try {
+			conn = getConnection();
+			ps = conn.prepareStatement(FIND_MOVIETAG_BY_TAGID_SQL);
+			ps.setInt(1, tagId);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				movieTag.setmId(rs.getInt("mId"));
 				movieTag.setTagId(tagId);
 				movieTag.setWeight(rs.getInt("weight"));
 			}
