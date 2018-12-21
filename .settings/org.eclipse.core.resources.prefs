@@ -1,3 +1,11 @@
 eclipse.preferences.version=1
+encoding//src/dao/AreaDAO.java=UTF-8
+encoding//src/dao/AreaDAOSImpl.java=UTF-8
+encoding//src/dao/AwardDAO.java=UTF-8
+encoding//src/dao/DAO.java=UTF-8
+encoding//src/dao/DAOBase.java=UTF-8
+encoding//src/entity/Area.java=UTF-8
+encoding//src/entity/Award.java=UTF-8
+encoding/<project>=UTF-8
 encoding/README.md=UTF-8
 encoding/db_douban1.0.sql=UTF-8
