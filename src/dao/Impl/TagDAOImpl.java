@@ -11,7 +11,7 @@ import dao.DAOBase;
 import dao.TagDAO;
 import entity.Tag;
 
-public class TagDAOImpl  extends DAOBase implements TagDAO{
+public class TagDAOImpl extends DAOBase implements TagDAO{
 	private  Connection conn = null;
 	private  PreparedStatement ps = null;
 	private  ResultSet rs = null;
