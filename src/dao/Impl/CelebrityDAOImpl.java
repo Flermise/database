@@ -32,8 +32,8 @@ public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{
 			ps.setString(6, celebrity.getSex());
 			ps.setString(7, celebrity.getConstellation());
 			ps.setString(8, celebrity.getBirthplace());
-			ps.setString(9, celebrity.getBirthday());
-			ps.setString(10, celebrity.getDeathday());
+			ps.setDate(9, celebrity.getBirthday());
+			ps.setDate(10, celebrity.getDeathday());
 			ps.setString(11, celebrity.getFamilyMember());
 			ps.setString(12, celebrity.getIMDb());
 			ps.setString(13, celebrity.getIntro());
@@ -62,8 +62,8 @@ public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{
 			ps.setString(6, celebrity.getSex());
 			ps.setString(7, celebrity.getConstellation());
 			ps.setString(8, celebrity.getBirthplace());
-			ps.setString(9, celebrity.getBirthday());
-			ps.setString(10, celebrity.getDeathday());
+			ps.setDate(9, celebrity.getBirthday());
+			ps.setDate(10, celebrity.getDeathday());
 			ps.setString(11, celebrity.getFamilyMember());
 			ps.setString(12, celebrity.getIMDb());
 			ps.setString(13, celebrity.getIntro());
@@ -110,8 +110,8 @@ public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{
 				celebrity.setSex(rs.getString("sex"));
 				celebrity.setConstellation(rs.getString("constellation"));
 				celebrity.setBirthplace(rs.getString("birthplace"));
-				celebrity.setBirthday(rs.getString("birthday"));
-				celebrity.setDeathday(rs.getString("deathday"));
+				celebrity.setBirthday(rs.getDate("birthday"));
+				celebrity.setDeathday(rs.getDate("deathday"));
 				celebrity.setFamilyMember(rs.getString("familyMember"));
 				celebrity.setIMDb(rs.getString("IMDb"));
 				celebrity.setIntro(rs.getString("intro"));
@@ -143,8 +143,8 @@ public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{
 				celebrity.setSex(rs.getString("sex"));
 				celebrity.setConstellation(rs.getString("constellation"));
 				celebrity.setBirthplace(rs.getString("birthplace"));
-				celebrity.setBirthday(rs.getString("birthday"));
-				celebrity.setDeathday(rs.getString("deathday"));
+				celebrity.setBirthday(rs.getDate("birthday"));
+				celebrity.setDeathday(rs.getDate("deathday"));
 				celebrity.setFamilyMember(rs.getString("familyMember"));
 				celebrity.setIMDb(rs.getString("IMDb"));
 				celebrity.setIntro(rs.getString("intro"));

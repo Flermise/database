@@ -1,12 +1,14 @@
 package entity;
 
+import java.sql.Date;
+
 public class Movie {
 	private int mId;
 	private String chName;
 	private String originName;
 	private String otherName;
 	private String poster;
-	private String releaseDate;
+	private Date releaseDate;
 	private String timeLength;
 	private String plot;
 	private String IMDb;
@@ -52,11 +54,11 @@ public class Movie {
 		this.poster = poster;
 	}
 
-	public String getReleaseDate() {
+	public Date getReleaseDate() {
 		return releaseDate;
 	}
 
-	public void setReleaseDate(String releaseDate) {
+	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 

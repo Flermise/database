@@ -1,10 +1,12 @@
 package entity;
 
+import java.sql.Date;
+
 public class UserInfo {
 	private	int uId;
 	private String image;
 	private String intro;
-	private String registDate;
+	private Date registDate;
 	private String city;
 	
 	public int getuId() {
@@ -31,11 +33,11 @@ public class UserInfo {
 		this.intro = intro;
 	}
 
-	public String getRegistDate() {
+	public Date getRegistDate() {
 		return registDate;
 	}
 
-	public void setRegistDate(String registDate) {
+	public void setRegistDate(Date registDate) {
 		this.registDate = registDate;
 	}
 

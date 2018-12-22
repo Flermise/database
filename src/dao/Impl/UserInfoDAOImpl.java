@@ -25,7 +25,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 			ps.setInt(1, userInfo.getuId());
 			ps.setString(2, userInfo.getImage());
 			ps.setString(3, userInfo.getIntro());
-			ps.setString(4, userInfo.getRegistDate());
+			ps.setDate(4, userInfo.getRegistDate());
 			ps.setString(5, userInfo.getCity());
 			ps.executeUpdate();
 			
@@ -45,7 +45,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 			ps = conn.prepareStatement(UPDATE_USERINFO_SQL);
 			ps.setString(1, userInfo.getImage());
 			ps.setString(2, userInfo.getIntro());
-			ps.setString(3, userInfo.getRegistDate());
+			ps.setDate(3, userInfo.getRegistDate());
 			ps.setString(4, userInfo.getCity());
 			ps.setInt(5, userInfo.getuId());
 			ps.executeUpdate();
@@ -86,7 +86,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 				userInfo.setuId(uId);
 				userInfo.setImage(rs.getString("image"));
 				userInfo.setIntro(rs.getString("intor"));
-				userInfo.setRegistDate(rs.getString("registDate"));
+				userInfo.setRegistDate(rs.getDate("registDate"));
 				userInfo.setCity(rs.getString("city"));
 			}
 		}catch(SQLException e) {
@@ -110,7 +110,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 				userInfo.setuId(rs.getInt("uId"));
 				userInfo.setImage(rs.getString("image"));
 				userInfo.setIntro(rs.getString("intor"));
-				userInfo.setRegistDate(rs.getString("registDate"));
+				userInfo.setRegistDate(rs.getDate("registDate"));
 				userInfo.setCity(rs.getString("city"));
 				userInfos.add(userInfo);
 			}

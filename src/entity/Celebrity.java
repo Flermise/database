@@ -1,5 +1,7 @@
 package entity;
 
+import java.sql.Date;
+
 public class Celebrity {
 	private int celebId;
 	private String chName;
@@ -10,8 +12,8 @@ public class Celebrity {
 	private String sex;
 	private String constellation;
 	private String birthplace;
-	private String birthday;
-	private String deathday;
+	private Date birthday;
+	private Date deathday;
 	private String familyMember;
 	private String IMDb;
 	private String intro;
@@ -88,19 +90,19 @@ public class Celebrity {
 		this.birthplace = birthplace;
 	}
 
-	public String getBirthday() {
+	public Date getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(String birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
 
-	public String getDeathday() {
+	public Date getDeathday() {
 		return deathday;
 	}
 
-	public void setDeathday(String deathday) {
+	public void setDeathday(Date deathday) {
 		this.deathday = deathday;
 	}
 
@@ -136,5 +138,7 @@ public class Celebrity {
 				+ ", deathday=" + deathday + ", familyMember=" + familyMember + ", IMDb=" + IMDb + ", intro=" + intro
 				+ "]";
 	}
+
+	
 
 }
