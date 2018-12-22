@@ -7,26 +7,25 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.UserDAO;
+import dao.UserTableDAO;
 import dao.DAOBase;
-import entity.User;
+import entity.UserTable;
 
-public class UserDAOImpl extends DAOBase implements UserDAO{
+public class UserTableDAOImpl extends DAOBase implements UserTableDAO{
 	private  Connection conn = null;
 	private  PreparedStatement ps = null;
 	private  ResultSet rs = null;
 	
-	private static final String INSERT_USER_SQL=
-			"INSERT INTO user VALUES(?, ?, ?, ?, ?)";
-	public void insertUser(User user) {
+	private static final String INSERT_USERTABLE_SQL=
+			"insert into usertable(userName,password,phoneNumber,email) values(?, ?, ?, ?)";
+	public void insertUser(UserTable user) {
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(INSERT_USER_SQL);
-			ps.setInt(1, user.getuId());
-			ps.setString(2, user.getUserName());
-			ps.setString(3, user.getPassword());
-			ps.setString(4, user.getPhoneNumber());
-			ps.setString(5, user.getEmail());
+			ps = conn.prepareStatement(INSERT_USERTABLE_SQL);
+			ps.setString(1, user.getUserName());
+			ps.setString(2, user.getPassword());
+			ps.setString(3, user.getPhoneNumber());
+			ps.setString(4, user.getEmail());
 			ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -36,17 +35,17 @@ public class UserDAOImpl extends DAOBase implements UserDAO{
 		
 	}
 
-	private static final String UPDATE_USER_SQL=
-			"UPDATE user SET userName=?,password=?,phoneNumber=?,emial=? WHERE uId = ?";
-	public void updateUser(User user) {
+	private static final String UPDATE_USERTABLE_SQL=
+			"UPDATE usertable SET userName=?,password=?,phoneNumber=?,email=? WHERE uId = ?";
+	public void updateUser(UserTable user) {
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(UPDATE_USER_SQL);
+			ps = conn.prepareStatement(UPDATE_USERTABLE_SQL);
 			ps.setString(1, user.getUserName());
 			ps.setString(2, user.getPassword());
 			ps.setString(3, user.getPhoneNumber());
 			ps.setString(4, user.getEmail());
-			ps.setInt(1, user.getuId());
+			ps.setInt(5, user.getuId());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {
@@ -56,12 +55,12 @@ public class UserDAOImpl extends DAOBase implements UserDAO{
 		}
 	}
 
-	private static final String DELETE_USER_SQL=
-			"DELETE FROM user WHERE uId = ?";
+	private static final String DELETE_USERTABLE_SQL=
+			"DELETE FROM usertable WHERE uId = ?";
 	public void deleteUser(int userId)  {
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(DELETE_USER_SQL);
+			ps = conn.prepareStatement(DELETE_USERTABLE_SQL);
 			ps.setInt(1, userId);
 			ps.executeUpdate();
 			
@@ -72,13 +71,13 @@ public class UserDAOImpl extends DAOBase implements UserDAO{
 		}
 	}
 
-	private static final String FIND_USER_BY_ID_SQL=
-			"SELECT * FROM user WHERE uId = ?";
-	public User findUserById(int userId) {
-		User user = new User();
+	private static final String FIND_USERTABLE_BY_ID_SQL=
+			"SELECT * FROM usertable WHERE uId = ?";
+	public UserTable findUserById(int userId) {
+		UserTable user = new UserTable();
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(FIND_USER_BY_ID_SQL);
+			ps = conn.prepareStatement(FIND_USERTABLE_BY_ID_SQL);
 			ps.setInt(1, userId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
@@ -96,16 +95,16 @@ public class UserDAOImpl extends DAOBase implements UserDAO{
 		return user;
 	}
 
-	private static final String FIND_USER_BY_ALL_SQL=
-			"SELECT * FROM user";
-	public List<User> findUserByAll(){
-		List<User> users = new ArrayList<User>();
+	private static final String FIND_USERTABLE_BY_ALL_SQL=
+			"SELECT * FROM usertable";
+	public List<UserTable> findUserByAll(){
+		List<UserTable> users = new ArrayList<UserTable>();
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(FIND_USER_BY_ALL_SQL);
+			ps = conn.prepareStatement(FIND_USERTABLE_BY_ALL_SQL);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				User user = new User();
+				UserTable user = new UserTable();
 				user.setuId(rs.getInt("uId"));
 				user.setUserName(rs.getString("userName"));
 				user.setPassword(rs.getString("password"));

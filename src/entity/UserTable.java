@@ -1,6 +1,6 @@
 package entity;
 
-public class User {
+public class UserTable {
 	private int uId;
 	private String userName;
 	private String password;
