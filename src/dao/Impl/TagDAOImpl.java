@@ -17,13 +17,12 @@ public class TagDAOImpl extends DAOBase implements TagDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_TAG_SQL=
-			"INSERT INTO tag VALUES(?, ?)";
+			"INSERT INTO tag(tagName) VALUES(?)";
 	public void insertTag(Tag tag) {
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(INSERT_TAG_SQL);
-			ps.setInt(1, tag.getTagId());
-			ps.setString(2, tag.getTagName());
+			ps.setString(1, tag.getTagName());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {

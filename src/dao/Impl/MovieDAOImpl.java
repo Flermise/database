@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,11 @@ public class MovieDAOImpl extends DAOBase implements MovieDAO{
 			ps.setString(6, movie.getTimeLength());
 			ps.setString(7, movie.getPlot());
 			ps.setString(8, movie.getIMDb());
+			if(movie.getWebsite()!=null)
 			ps.setString(9, movie.getWebsite());
+			else {
+				ps.setNull(9,Types.VARCHAR);
+			}
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {
@@ -56,7 +62,11 @@ public class MovieDAOImpl extends DAOBase implements MovieDAO{
 			ps.setString(6, movie.getTimeLength());
 			ps.setString(7, movie.getPlot());
 			ps.setString(8, movie.getIMDb());
-			ps.setString(9, movie.getWebsite());
+			if(movie.getWebsite()!=null)
+				ps.setString(9, movie.getWebsite());
+				else {
+					ps.setNull(9,Types.VARCHAR);
+				}
 			ps.setInt(10, movie.getmId());
 			ps.executeUpdate();
 			
