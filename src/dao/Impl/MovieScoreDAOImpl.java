@@ -80,7 +80,7 @@ public class MovieScoreDAOImpl  extends DAOBase implements MovieScoreDAO{
 	}
 
 	private static final String FIND_MOVIESCORE_BY_ID_SQL=
-			"SELECT * FROM movieScore WHERE movieScoreId = ?";
+			"SELECT * FROM movieScore WHERE mId = ?";
 	public MovieScore findMovieScoreById(int movieScoreId) {
 		MovieScore movieScore = new MovieScore();
 		try {
@@ -92,11 +92,11 @@ public class MovieScoreDAOImpl  extends DAOBase implements MovieScoreDAO{
 				movieScore.setmId(movieScoreId);
 				movieScore.setTotalScore(rs.getFloat("totalscore"));
 				movieScore.setTotalNumber(rs.getInt("totalNumber"));
-				movieScore.setFiveStar(rs.getInt("fivestar"));
-				movieScore.setFourStar(rs.getInt("fivestar"));
-				movieScore.setThreeStar(rs.getInt("threestar"));
-				movieScore.setTwoStar(rs.getInt("twostar"));
-				movieScore.setOneStar(rs.getInt("onestar"));
+				movieScore.setFiveStar(rs.getInt("fiveStar"));
+				movieScore.setFourStar(rs.getInt("fourStar"));
+				movieScore.setThreeStar(rs.getInt("threeStar"));
+				movieScore.setTwoStar(rs.getInt("twoStar"));
+				movieScore.setOneStar(rs.getInt("oneStar"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
