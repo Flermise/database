@@ -19,7 +19,7 @@ class LanguageDAOImplTest {
 
 	@Test
 	void testUpdateLanguage() {
-		lan.setLanguageId(16);
+		lan.setLanguageId(17);
 		lan.setLanguageName("测试update");
 		new LanguageDAOImpl().updateLanguage(lan);
 	}
