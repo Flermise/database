@@ -61,5 +61,5 @@ class MovieScoreDAOImplTest {
 			System.out.println(item);
 		}
 	}
-
+	
 }
