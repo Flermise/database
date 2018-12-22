@@ -75,9 +75,7 @@ class CelebrityDAOImplTest {
 	@Test
 	void testFindCelebrityByAll() {
 		List<Celebrity> list  = new CelebrityDAOImpl().findCelebrityByAll();
-		for(Celebrity item : list) {
-			System.out.println(item.toString());
-		}
+		assertEquals(24, list.size());
 	}
 
 }

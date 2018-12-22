@@ -17,13 +17,12 @@ public class AreaDAOImpl extends DAOBase implements AreaDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_AREA_SQL=
-			"INSERT INTO area VALUES(?, ?)";
+			"INSERT INTO area(areaName) VALUES(?)";
 	public void insertArea(Area area) {
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(INSERT_AREA_SQL);
-			ps.setInt(1, area.getAreaId());
-			ps.setString(2, area.getAreaName());
+			ps = conn.prepareStatement(INSERT_AREA_SQL);;
+			ps.setString(1, area.getAreaName());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {

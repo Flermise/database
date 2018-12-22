@@ -40,9 +40,7 @@ class LanguageDAOImplTest {
 	@Test
 	void testFindLanguageByAll() {
 		List<Language> list = new LanguageDAOImpl().findLanguageByAll();
-		for(Language item : list) {
-			System.out.println(item.toString());
-		}
+		assertEquals(15, list.size());
 	}
 
 }

@@ -45,9 +45,7 @@ class AwardInfoDAOImplTest {
 	@Test
 	void testFindAwardInfoByAll() {
 	 List<AwardInfo> list = new AwardInfoDAOImpl().findAwardInfoByAll();
-	 for(AwardInfo item : list ) {
-		 System.out.println(item.toString());
-	 }
+	 assertEquals(32, list.size());
 	}
 
 }

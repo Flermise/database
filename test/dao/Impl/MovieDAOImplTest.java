@@ -62,9 +62,7 @@ class MovieDAOImplTest {
 	@Test
 	void testFindMovieByAll() {
 		List<Movie> list  = new MovieDAOImpl().findMovieByAll();
-		for(Movie item : list) {
-			System.out.println(item);
-		}
+		assertEquals(21, list.size());
 	}
 
 }

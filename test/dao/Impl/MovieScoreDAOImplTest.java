@@ -57,9 +57,7 @@ class MovieScoreDAOImplTest {
 	@Test
 	void testFindMovieScoreByAll() {
 		List<MovieScore> list = new MovieScoreDAOImpl().findMovieScoreByAll();
-		for(MovieScore item : list) {
-			System.out.println(item);
-		}
+		assertEquals(21, list.size());
 	}
 	
 }

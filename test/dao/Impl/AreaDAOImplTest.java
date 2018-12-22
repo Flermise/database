@@ -13,10 +13,9 @@ class AreaDAOImplTest {
 	Area area = new Area();
 	@Test
 	void testInsertArea() {
-		area.setAreaId(23);
-		area.setAreaName("test1");
+		area.setAreaName("test");
 		new AreaDAOImpl().insertArea(area);
-		System.out.println("test insertArea");
+		
 	}
 
 	@Test
@@ -24,29 +23,25 @@ class AreaDAOImplTest {
 		area.setAreaId(23);
 		area.setAreaName("update");
 		new AreaDAOImpl().updateArea(area);
-		System.out.println("test updateArea");
+		
 	}
 
 	@Test
 	void testDeleteArea() {
 		new AreaDAOImpl().deleteArea(23);
-		System.out.println("test deleteArea");
 	}
 
 	@Test
 	void testFindAreaById() {
-		 area = new AreaDAOImpl().findAreaById(23);
-		 assertEquals("update", area.getAreaName());
+		 area = new AreaDAOImpl().findAreaById(22);
+		 assertEquals(22, area.getAreaId());
+		 assertEquals("奥地利", area.getAreaName());
 	}
 
 	@Test
 	void testFindAreaByAll() {
 		List<Area> list = new AreaDAOImpl().findAreaByAll();
-		for(int i=0;i<list.size();i++)
-		{
-			area =list.get(i);
-			System.out.println(area.toString());
-		}
+		assertEquals(22, list.size());
 	}
 
 }
