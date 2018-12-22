@@ -4,17 +4,17 @@ public class Celebrity {
 	private int celebId;
 	private String chName;
 	private String enName;
-	public String otherChName;
-	public String otherEnName;
-	public String avatar;
-	public String sex;
-	public String constellation;
-	public String birthplace;
-	public String birthday;
-	public String deathday;
-	public String familyMember;
-	public String IMDb;
-	public String intro;
+	private String otherChName;
+	private String otherEnName;
+	private String avatar;
+	private String sex;
+	private String constellation;
+	private String birthplace;
+	private String birthday;
+	private String deathday;
+	private String familyMember;
+	private String IMDb;
+	private String intro;
 
 	public int getCelebId() {
 		return celebId;

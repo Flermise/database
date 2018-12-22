@@ -19,15 +19,14 @@ public class AwardInfoDAOImpl extends DAOBase implements AwardInfoDAO{
 	
 	
 	private static final String INSERT_AWARDINFO_SQL=
-			"insert into awardInfo values(?,?,?);";
+			"insert into awardInfo(awdId,awdInfoName) values(?,?);";
 	@Override
 	public void insertAwardInfo(AwardInfo awdInfo) {
 			try {
 				conn= getConnection();
 				ps= conn.prepareStatement(INSERT_AWARDINFO_SQL);
-				ps.setInt(1, awdInfo.getAwdInfoId());
-				ps.setInt(2, awdInfo.getAwdId());
-				ps.setString(3, awdInfo.getAwdInfoName());
+				ps.setInt(1, awdInfo.getAwdId());
+				ps.setString(2, awdInfo.getAwdInfoName());
 				ps.executeUpdate();
 				
 			} catch (SQLException e) {
@@ -83,8 +82,8 @@ public class AwardInfoDAOImpl extends DAOBase implements AwardInfoDAO{
 			ps.setInt(1, awdInfoId);
 			rs =  ps.executeQuery();
 			if(rs.next()) {
-				awdInfo.setAwdId(awdInfoId);
-				awdInfo.setAwdInfoId(rs.getInt("awdInfoId"));
+				awdInfo.setAwdId(rs.getInt("awdId"));
+				awdInfo.setAwdInfoId(awdInfoId);
 				awdInfo.setAwdInfoName(rs.getString("awdInfoName"));
 			}
 		} catch (SQLException e) {

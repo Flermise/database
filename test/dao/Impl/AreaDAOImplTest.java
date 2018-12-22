@@ -7,7 +7,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import entity.Area;
-import junit.framework.Assert;
 
 class AreaDAOImplTest {
 

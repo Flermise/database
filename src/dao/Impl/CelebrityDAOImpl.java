@@ -17,25 +17,26 @@ public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_CELEBRITY_SQL=
-			"INSERT INTO celebrity VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			"INSERT INTO celebrity(chName,enName,otherChName,otherEnName,avatar,sex,constellation,birthplace,"
+			+ "birthday,deathday,familyMember,IMDb,intro)"
+			+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	public void insertCelebrity(Celebrity celebrity) {
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(INSERT_CELEBRITY_SQL);
-			ps.setInt(1, celebrity.getCelebId());
-			ps.setString(2, celebrity.getChName());
-			ps.setString(3, celebrity.getEnName());
-			ps.setString(4, celebrity.getOtherChName());
-			ps.setString(5, celebrity.getOtherEnName());
-			ps.setString(6, celebrity.getAvatar());
-			ps.setString(7, celebrity.getSex());
-			ps.setString(8, celebrity.getConstellation());
-			ps.setString(9, celebrity.getBirthplace());
-			ps.setString(10, celebrity.getBirthday());
-			ps.setString(11, celebrity.getDeathday());
-			ps.setString(12, celebrity.getFamilyMember());
-			ps.setString(13, celebrity.getIMDb());
-			ps.setString(14, celebrity.getIntro());
+			ps.setString(1, celebrity.getChName());
+			ps.setString(2, celebrity.getEnName());
+			ps.setString(3, celebrity.getOtherChName());
+			ps.setString(4, celebrity.getOtherEnName());
+			ps.setString(5, celebrity.getAvatar());
+			ps.setString(6, celebrity.getSex());
+			ps.setString(7, celebrity.getConstellation());
+			ps.setString(8, celebrity.getBirthplace());
+			ps.setString(9, celebrity.getBirthday());
+			ps.setString(10, celebrity.getDeathday());
+			ps.setString(11, celebrity.getFamilyMember());
+			ps.setString(12, celebrity.getIMDb());
+			ps.setString(13, celebrity.getIntro());
 			ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -48,7 +49,7 @@ public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{
 	private static final String UPDATE_CELEBRITY_SQL=
 			"UPDATE celebrity SET chName=?, enName=?, otherChName=?, otherEnName=?, avatar=?,"
 			+ " sex=?, constellation=?, birthplace=?, birthday=?, deathday=?, familyMember=?, "
-			+ "IMDb=?, intro=? WHERE celebrityId = ?";
+			+ "IMDb=?, intro=? WHERE celebId = ?";
 	public void updateCelebrity(Celebrity celebrity) {
 		try {
 			conn = getConnection();
@@ -76,7 +77,7 @@ public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{
 	}
 
 	private static final String DELETE_CELEBRITY_SQL=
-			"DELETE FROM celebrity WHERE celebrityId = ?";
+			"DELETE FROM celebrity WHERE celebId = ?";
 	public void deleteCelebrity(int celebId)  {
 		try {
 			conn = getConnection();
