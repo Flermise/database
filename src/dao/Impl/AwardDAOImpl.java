@@ -19,18 +19,17 @@ public class AwardDAOImpl extends DAOBase implements AwardDAO{
 
 	
 	private static final String INSERT_AWARD_SQL=
-			"insert into award(awdId,chName,enName,awdDate,awdCountry,website) values(?,?,?,?,?,?);";
+			"insert into award(chName,enName,awdDate,awdCountry,website) values(?,?,?,?,?);";
 	@Override
 	public void insertAward(Award award) {
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(INSERT_AWARD_SQL);
-			ps.setInt(1, award.getAwdId());
-			ps.setString(2, award.getChName());
-			ps.setString(3, award.getEnName());
-			ps.setDate(4, award.getAwdDate());
-			ps.setString(5, award.getAwdCountry());
-			ps.setString(6, award.getWebsite());
+			ps.setString(1, award.getChName());
+			ps.setString(2, award.getEnName());
+			ps.setDate(3, award.getAwdDate());
+			ps.setString(4, award.getAwdCountry());
+			ps.setString(5, award.getWebsite());
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -91,7 +90,7 @@ public class AwardDAOImpl extends DAOBase implements AwardDAO{
 				award.setAwdId(awdId);
 				award.setAwdCountry(rs.getString("awdCountry"));
 				award.setAwdDate(rs.getDate("awdDate"));
-				award.setChName(rs.getString("cnName"));
+				award.setChName(rs.getString("chName"));
 				award.setEnName(rs.getString("enName"));
 				award.setWebsite(rs.getString("website"));
 			}
@@ -115,7 +114,7 @@ public class AwardDAOImpl extends DAOBase implements AwardDAO{
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				Award award = new Award();
-				award.setAwdId(rs.getInt("awardId"));
+				award.setAwdId(rs.getInt("awdId"));
 				award.setAwdCountry(rs.getString("awdCountry"));
 				award.setAwdDate(rs.getDate("awdDate"));
 				award.setChName(rs.getString("chName"));
