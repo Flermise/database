@@ -179,7 +179,7 @@ public class CommentDAOImpl extends DAOBase implements CommentDAO{
 		List<Comment> cmts = new ArrayList<>();
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(FIND_COMMENT_BY_UID_SQL);
+			ps = conn.prepareStatement(FIND_COMMENT_BY_MID_SQL);
 			ps.setInt(1, mId);
 			rs = ps.executeQuery();
 			while(rs.next()) {
@@ -209,7 +209,7 @@ public class CommentDAOImpl extends DAOBase implements CommentDAO{
 		List<Comment> cmts = new ArrayList<>();
 		try {
 			conn = getConnection();
-			ps = conn.prepareStatement(FIND_COMMENT_BY_UID_SQL);
+			ps = conn.prepareStatement(FIND_COMMENT_BY_ALL_SQL);
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				Comment cmt = new Comment();
