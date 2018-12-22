@@ -17,13 +17,12 @@ public class LanguageDAOImpl extends DAOBase implements LanguageDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_LANGUAGE_SQL=
-			"INSERT INTO language VALUES(?, ?)";
+			"INSERT INTO language(languageName) VALUES(?)";
 	public void insertLanguage(Language language) {
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(INSERT_LANGUAGE_SQL);
-			ps.setInt(1, language.getLanguageId());
-			ps.setString(2, language.getLanguageName());
+			ps.setString(1, language.getLanguageName());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {
