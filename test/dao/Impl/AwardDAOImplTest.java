@@ -58,4 +58,5 @@ class AwardDAOImplTest {
 		List<Award> list = awdDI.findAwardByAll();
 		assertEquals(7,list.size());
 	}
+	
 }
