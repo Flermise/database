@@ -60,7 +60,7 @@ public class MovieTagDAOImpl extends DAOBase implements MovieTagDAO{
 			conn = getConnection();
 			ps = conn.prepareStatement(DELETE_MOVIETAG_SQL);
 			ps.setInt(1, mId);
-			ps.setInt(1, tagId);
+			ps.setInt(2, tagId);
 			ps.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -87,7 +87,7 @@ public class MovieTagDAOImpl extends DAOBase implements MovieTagDAO{
 	}
 	
 	private static final String DELETE_MOVIETAG_BY_TAGID_SQL=
-			"delete from movieTag where mId = ?;";
+			"delete from movieTag where tagId = ?;";
 	@Override
 	public void deleteMovieTagByTagId(int tagId) {
 		try {
@@ -128,47 +128,51 @@ public class MovieTagDAOImpl extends DAOBase implements MovieTagDAO{
 	}
 	
 	private static final String FIND_MOVIETAG_BY_MID_SQL=
-			"SELECT * FROM movieTag WHERE mId = ? and tagId = ?";
-	public MovieTag findMovieTagByMId(int mId) {
-		MovieTag movieTag = new MovieTag();
+			"SELECT * FROM movieTag WHERE mId = ?";
+	public List<MovieTag> findMovieTagByMId(int mId) {
+		List<MovieTag> movieTags  = new ArrayList<MovieTag>();
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(FIND_MOVIETAG_BY_MID_SQL);
 			ps.setInt(1, mId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
+				MovieTag movieTag = new MovieTag();
 				movieTag.setmId(mId);
 				movieTag.setTagId(rs.getInt("tagId"));
 				movieTag.setWeight(rs.getInt("weight"));
+				movieTags.add(movieTag);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			release(conn, ps, rs);
 		}
-		return movieTag;
+		return movieTags;
 	}
 	
 	private static final String FIND_MOVIETAG_BY_TAGID_SQL=
-			"SELECT * FROM movieTag WHERE mId = ? and tagId = ?";
-	public MovieTag findMovieTagByTagId(int tagId) {
-		MovieTag movieTag = new MovieTag();
+			"SELECT * FROM movieTag WHERE tagId = ?";
+	public List<MovieTag> findMovieTagByTagId(int tagId) {
+		List<MovieTag> movieTags =  new ArrayList<MovieTag>();
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(FIND_MOVIETAG_BY_TAGID_SQL);
 			ps.setInt(1, tagId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
+				MovieTag movieTag = new MovieTag();
 				movieTag.setmId(rs.getInt("mId"));
 				movieTag.setTagId(tagId);
 				movieTag.setWeight(rs.getInt("weight"));
+				movieTags.add(movieTag);
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			release(conn, ps, rs);
 		}
-		return movieTag;
+		return movieTags;
 	}
 
 	private static final String FIND_MOVIETAG_BY_ALL_SQL=

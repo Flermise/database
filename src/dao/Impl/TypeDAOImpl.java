@@ -17,15 +17,13 @@ public class TypeDAOImpl extends DAOBase implements TypeDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_TYPE_SQL=
-			"INSERT INTO type VALUES(?, ?)";
+			"INSERT INTO type VALUES(?)";
 	public void insertType(Type type) {
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(INSERT_TYPE_SQL);
-			ps.setInt(1, type.getTypeId());
-			ps.setString(2, type.getTypeName());
+			ps.setString(1, type.getTypeName());
 			ps.executeUpdate();
-			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {

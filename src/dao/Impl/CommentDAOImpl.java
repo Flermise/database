@@ -40,7 +40,7 @@ public class CommentDAOImpl extends DAOBase implements CommentDAO{
 	}
 	
 	private static final String UPDATE_COMMENT_SQL = 
-			"update comment set state = ?,score = ?,cmtTime=?,cmtContent=?"
+			"update comment set state = ?,score = ?,cmtTime=?,cmtContent=?,"
 			+ "likeNum=?,isVisible=? where uId= ? and mId = ?";
 	@Override
 	public void updateComment(Comment cmt) {
@@ -128,7 +128,7 @@ public class CommentDAOImpl extends DAOBase implements CommentDAO{
 				cmt.setuId(uId);
 				cmt.setmId(mId);
 				cmt.setState(rs.getString("state"));
-				cmt.setScore(rs.getFloat("socre"));
+				cmt.setScore(rs.getFloat("score"));
 				cmt.setCmtTime(rs.getTimestamp("cmtTime"));
 				cmt.setCmtContent(rs.getString("cmtContent"));
 				cmt.setLikeNum(rs.getInt("likeNum"));
@@ -157,7 +157,7 @@ public class CommentDAOImpl extends DAOBase implements CommentDAO{
 				cmt.setuId(uId);
 				cmt.setmId(rs.getInt("mId"));
 				cmt.setState(rs.getString("state"));
-				cmt.setScore(rs.getFloat("socre"));
+				cmt.setScore(rs.getFloat("score"));
 				cmt.setCmtTime(rs.getTimestamp("cmtTime"));
 				cmt.setCmtContent(rs.getString("cmtContent"));
 				cmt.setLikeNum(rs.getInt("likeNum"));
@@ -187,7 +187,7 @@ public class CommentDAOImpl extends DAOBase implements CommentDAO{
 				cmt.setuId(rs.getInt("uId"));
 				cmt.setmId(mId);
 				cmt.setState(rs.getString("state"));
-				cmt.setScore(rs.getFloat("socre"));
+				cmt.setScore(rs.getFloat("score"));
 				cmt.setCmtTime(rs.getTimestamp("cmtTime"));
 				cmt.setCmtContent(rs.getString("cmtContent"));
 				cmt.setLikeNum(rs.getInt("likeNum"));
@@ -216,7 +216,7 @@ public class CommentDAOImpl extends DAOBase implements CommentDAO{
 				cmt.setuId(rs.getInt("uId"));
 				cmt.setmId(rs.getInt("mId"));
 				cmt.setState(rs.getString("state"));
-				cmt.setScore(rs.getFloat("socre"));
+				cmt.setScore(rs.getFloat("score"));
 				cmt.setCmtTime(rs.getTimestamp("cmtTime"));
 				cmt.setCmtContent(rs.getString("cmtContent"));
 				cmt.setLikeNum(rs.getInt("likeNum"));

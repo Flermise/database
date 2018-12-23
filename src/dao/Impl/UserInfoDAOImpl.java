@@ -38,7 +38,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 	}
 
 	private static final String UPDATE_USERINFO_SQL=
-			"UPDATE userInfo SET image=?, intro=?, registDate=?, city=? WHERE userInfoId = ?";
+			"UPDATE userInfo SET image=?, intro=?, registDate=?, city=? WHERE uId = ?";
 	public void updateUserInfo(UserInfo userInfo) {
 		try {
 			conn = getConnection();
@@ -58,7 +58,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 	}
 
 	private static final String DELETE_USERINFO_SQL=
-			"DELETE FROM userInfo WHERE userInfoId = ?";
+			"DELETE FROM userInfo WHERE uId = ?";
 	public void deleteUserInfo(int uId)  {
 		try {
 			conn = getConnection();
@@ -85,7 +85,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 			if(rs.next()) {
 				userInfo.setuId(uId);
 				userInfo.setImage(rs.getString("image"));
-				userInfo.setIntro(rs.getString("intor"));
+				userInfo.setIntro(rs.getString("intro"));
 				userInfo.setRegistDate(rs.getDate("registDate"));
 				userInfo.setCity(rs.getString("city"));
 			}
@@ -109,7 +109,7 @@ public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
 				UserInfo userInfo = new UserInfo();
 				userInfo.setuId(rs.getInt("uId"));
 				userInfo.setImage(rs.getString("image"));
-				userInfo.setIntro(rs.getString("intor"));
+				userInfo.setIntro(rs.getString("intro"));
 				userInfo.setRegistDate(rs.getDate("registDate"));
 				userInfo.setCity(rs.getString("city"));
 				userInfos.add(userInfo);

@@ -17,16 +17,15 @@ public class MovieRoleDAOImpl  extends DAOBase implements MovieRoleDAO{
 	private  ResultSet rs = null;
 	
 	private static final String INSERT_MOVIEROLE_SQL=
-			"INSERT INTO movieRole VALUES(?, ?, ?, ?, ?)";
+			"INSERT INTO movieRole VALUES(?, ?, ?, ?)";
 	public void insertMovieRole(MovieRole movieRole) {
 		try {
 			conn = getConnection();
 			ps = conn.prepareStatement(INSERT_MOVIEROLE_SQL);
-			ps.setInt(1, movieRole.getMrId());
-			ps.setInt(2, movieRole.getCelebId());
-			ps.setInt(3, movieRole.getmId());
-			ps.setString(4, movieRole.getProfName());
-			ps.setString(5, movieRole.getRoleName());
+			ps.setInt(1, movieRole.getCelebId());
+			ps.setInt(2, movieRole.getmId());
+			ps.setString(3, movieRole.getProfName());
+			ps.setString(4, movieRole.getRoleName());
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {

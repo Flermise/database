@@ -13,8 +13,8 @@ public interface MovieTagDAO extends DAO{
 	public void deleteMovieTagByTagId(int tagId);
 	
 	public MovieTag findMovieTag(int mId, int tagId);
-	public MovieTag findMovieTagByMId(int mId);
-	public MovieTag findMovieTagByTagId(int tagId);
+	public List<MovieTag> findMovieTagByMId(int mId);
+	public List<MovieTag> findMovieTagByTagId(int tagId);
 	
 	public List<MovieTag> findMovieTagByAll();
 }	                                      
