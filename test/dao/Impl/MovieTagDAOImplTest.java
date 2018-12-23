@@ -68,5 +68,5 @@ class MovieTagDAOImplTest {
 		List<MovieTag> list = movieTagDAOImpl.findMovieTagByAll();
 		assertEquals(160, list.size());
 	}
-
+	
 }
