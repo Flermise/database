@@ -33,11 +33,7 @@ public class MovieDAOImpl extends DAOBase implements MovieDAO{
 			ps.setString(6, movie.getTimeLength());
 			ps.setString(7, movie.getPlot());
 			ps.setString(8, movie.getIMDb());
-			if(movie.getWebsite()!=null)
 			ps.setString(9, movie.getWebsite());
-			else {
-				ps.setNull(9,Types.VARCHAR);
-			}
 			ps.executeUpdate();
 			
 		}catch(SQLException e) {
