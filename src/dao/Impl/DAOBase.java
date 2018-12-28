@@ -1,4 +1,4 @@
-package dao;
+package dao.Impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+import dao.DAO;
 
 public class DAOBase implements DAO {
 	private static ComboPooledDataSource ds = null;

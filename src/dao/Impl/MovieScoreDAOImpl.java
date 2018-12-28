@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.MovieScoreDAO;
-import dao.DAOBase;
 import entity.MovieScore;
 
 public class MovieScoreDAOImpl  extends DAOBase implements MovieScoreDAO{

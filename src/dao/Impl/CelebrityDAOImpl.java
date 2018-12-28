@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.CelebrityDAO;
-import dao.DAOBase;
 import entity.Celebrity;
 
 public class CelebrityDAOImpl extends DAOBase implements CelebrityDAO{

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.AreaDAO;
-import dao.DAOBase;
 import entity.Area;
 
 public class AreaDAOImpl extends DAOBase implements AreaDAO{

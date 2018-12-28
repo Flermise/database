@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.MovieDAO;
-import dao.DAOBase;
 import entity.Movie;
 
 public class MovieDAOImpl extends DAOBase implements MovieDAO{

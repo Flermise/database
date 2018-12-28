@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.AwardDAO;
-import dao.DAOBase;
 import entity.Award;
 
 public class AwardDAOImpl extends DAOBase implements AwardDAO{

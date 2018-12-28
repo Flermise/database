@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.TypeDAO;
-import dao.DAOBase;
 import entity.Type;
 
 public class TypeDAOImpl extends DAOBase implements TypeDAO{

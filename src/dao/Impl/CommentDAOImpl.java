@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.CommentDAO;
-import dao.DAOBase;
 import entity.Comment;
 
 public class CommentDAOImpl extends DAOBase implements CommentDAO{

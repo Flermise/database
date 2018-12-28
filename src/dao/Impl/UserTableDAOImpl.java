@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.UserTableDAO;
-import dao.DAOBase;
 import entity.UserTable;
 
 public class UserTableDAOImpl extends DAOBase implements UserTableDAO{

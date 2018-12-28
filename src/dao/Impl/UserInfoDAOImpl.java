@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.UserInfoDAO;
-import dao.DAOBase;
 import entity.UserInfo;
 
 public class UserInfoDAOImpl extends DAOBase implements UserInfoDAO{
