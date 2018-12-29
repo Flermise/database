@@ -24,7 +24,7 @@ public class MovieAreaDAOImpl extends DAOBase implements MovieAreaDAO{
 			ps = conn.prepareStatement(INSERT_MOVIEAREA_SQL);
 			ps.setInt(1, moviearea.getmId());
 			ps.setInt(2, moviearea.getAreaId());
-			ps.executeUpdate();
+			ps.executeUpdate(); 
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}finally{
