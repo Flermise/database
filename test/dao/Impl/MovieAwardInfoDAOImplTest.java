@@ -15,7 +15,7 @@ class MovieAwardInfoDAOImplTest {
 	@Test
 	void testInsertMovieAwardInfo() {
 		movieAwdInfo.setmId(23);
-		movieAwdInfo.setAwdInfoId(35);
+		movieAwdInfo.setAwdInfoId(36);
 		movieAwdInfo.setState("提名");
 		movieAwdInfoDAOImpl.insertMovieAwardInfo(movieAwdInfo);
 	}

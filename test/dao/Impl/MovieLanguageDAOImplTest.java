@@ -14,14 +14,14 @@ class MovieLanguageDAOImplTest {
 	MovieLanguage ml = new MovieLanguage();
 	@Test
 	void testInsertMoiveLanguage() {
-		ml.setmId(22);
+		ml.setmId(28);
 		ml.setLanguageId(1);
 		new MovieLanguageDAOImpl().insertMoiveLanguage(ml);
 	}
 
 	@Test
 	void testDeleteMoiveLanguage() {
-		new MovieLanguageDAOImpl().deleteMoiveLanguage(22, 1);
+		new MovieLanguageDAOImpl().deleteMoiveLanguage(28, 1);
 	}
 
 	@Test

@@ -11,11 +11,11 @@ import entity.Area;
 class AreaDAOImplTest {
 
 	Area area = new Area();
+	AreaDAOImpl areaDI = new AreaDAOImpl();
 	@Test
 	void testInsertArea() {
 		area.setAreaName("test");
 		new AreaDAOImpl().insertArea(area);
-		
 	}
 
 	@Test
@@ -23,12 +23,11 @@ class AreaDAOImplTest {
 		area.setAreaId(23);
 		area.setAreaName("update");
 		new AreaDAOImpl().updateArea(area);
-		
 	}
 
 	@Test
 	void testDeleteArea() {
-		new AreaDAOImpl().deleteArea(23);
+		new AreaDAOImpl().deleteArea(25);
 	}
 
 	@Test
@@ -42,6 +41,22 @@ class AreaDAOImplTest {
 	void testFindAreaByAll() {
 		List<Area> list = new AreaDAOImpl().findAreaByAll();
 		assertEquals(22, list.size());
+	}
+	
+	@Test
+	void Test() {
+		area.setAreaName("test");
+		areaDI.insertArea(area);
+		area = areaDI.findAreaById(23);
+		System.out.println(area.toString());
+		area.setAreaId(23);
+		area.setAreaName("update");
+		areaDI.updateArea(area);
+		List<Area> list = new AreaDAOImpl().findAreaByAll();
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i).toString());
+		}
+		areaDI.deleteArea(23);
 	}
 
 }

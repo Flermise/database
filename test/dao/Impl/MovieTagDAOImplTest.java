@@ -14,7 +14,7 @@ class MovieTagDAOImplTest {
 	MovieTagDAOImpl movieTagDAOImpl = new MovieTagDAOImpl();
 	@Test
 	void testInsertMovieTag() {
-		movieTag.setmId(23);
+		movieTag.setmId(28);
 		movieTag.setTagId(507);
 		movieTag.setWeight(1);
 		movieTagDAOImpl.insertMovieTag(movieTag);
@@ -22,7 +22,7 @@ class MovieTagDAOImplTest {
 
 	@Test
 	void testUpdateMovieTag() {
-		movieTag.setmId(23);
+		movieTag.setmId(28);
 		movieTag.setTagId(507);
 		movieTag.setWeight(2);
 		movieTagDAOImpl.updateMovieTag(movieTag);
@@ -30,12 +30,12 @@ class MovieTagDAOImplTest {
 
 	@Test
 	void testDeleteMovieTag() {
-		movieTagDAOImpl.deleteMovieTag(23, 507);
+		movieTagDAOImpl.deleteMovieTag(28, 507);
 	}
 
 	@Test
 	void testDeleteMovieTagByMId() {
-		movieTagDAOImpl.deleteMovieTagByMId(23);
+		movieTagDAOImpl.deleteMovieTagByMId(28);
 	}
 
 	@Test
@@ -45,7 +45,7 @@ class MovieTagDAOImplTest {
 
 	@Test
 	void testFindMovieTag() {
-		MovieTag movieTag  = movieTagDAOImpl.findMovieTag(23, 507);
+		MovieTag movieTag  = movieTagDAOImpl.findMovieTag(28, 507);
 		assertEquals(23, movieTag.getmId());
 		assertEquals(507, movieTag.getTagId());
 		assertEquals(2, movieTag.getWeight());
@@ -53,7 +53,7 @@ class MovieTagDAOImplTest {
 
 	@Test
 	void testFindMovieTagByMId() {
-		List<MovieTag> list = movieTagDAOImpl.findMovieTagByMId(23);
+		List<MovieTag> list = movieTagDAOImpl.findMovieTagByMId(28);
 		assertEquals(1, list.size());
 	}
 

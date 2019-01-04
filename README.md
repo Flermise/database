@@ -1,5 +1,5 @@
 Database Course Design
-
+*本分支仅供作业提交使用，完整开发记录请见于master分支，github地址https://github.com/Flermise/database*
 * usertable:
   ```
   uid		用户id	    key 自增

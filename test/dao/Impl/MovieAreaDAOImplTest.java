@@ -15,13 +15,13 @@ class MovieAreaDAOImplTest {
 	@Test
 	void testInsertMovieArea() {
 		ma.setAreaId(11);
-		ma.setmId(22);
+		ma.setmId(21);
 		new	MovieAreaDAOImpl().insertMovieArea(ma);
 	}
 
 	@Test
 	void testDeleteMovieArea() {
-		new MovieAreaDAOImpl().deleteMovieArea(11, 10);
+		new MovieAreaDAOImpl().deleteMovieArea(21,11);
 	}
 
 	@Test
